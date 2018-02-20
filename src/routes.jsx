@@ -39,6 +39,7 @@ function onOperatorEnter(nextState, replace) {
 const routes = <Route path="/" component={PageLayout}>
   <IndexRoute component={Start} />
   <Route path="start" component={Start} />
+  <Route path="board" component={Posts} />
   <Route path="login" component={Login} />
   <Route path="register" component={Register} />
   <Route path="categories" component={Categories} />
