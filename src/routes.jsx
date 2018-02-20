@@ -2,6 +2,13 @@ import React from 'react'
 
 import {IndexRoute, Route} from 'react-router'
 
+import PageLayout from './containers/PageLayout'
+import NotFound from './containers/NotFound'
+import Start from './containers/Start'
+import Login from './containers/Login'
+import Register from './containers/Register'
+import Start from './containers/Start'
+
 const jwt_decode = require('jwt-decode')
 
 function checkAuth(nextState, replace) {
@@ -25,6 +32,11 @@ function onOperatorEnter(nextState, replace) {
 }
 
 const routes = <Route path="/" component={PageLayout}>
+  <IndexRoute component={Start} />
+  <Route path="start" component={Start} />
+  <Route path="login" component={Login} />
+  <Route path="register" component={Register} />
+  <Route path="*" component={NotFound}/>
 </Route>
 
 export default routes
