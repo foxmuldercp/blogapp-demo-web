@@ -4,6 +4,7 @@ import {push} from 'react-router-redux'
 import {Link} from 'react-router'
 
 import {logOut} from '../actions/user'
+import PostAdd from './PostAdd'
 
 import { Layout, Menu, Icon, Button, Breadcrumb, Badge } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
@@ -75,6 +76,9 @@ class PageLayout extends Component {
           <Menu.Item key="/users"><Link to='/users'><FormattedMessage id='header.users' /></Link></Menu.Item>
         : null }
         <Menu.Item key="/posts"><Link to='/posts'><FormattedMessage id='header.posts' /></Link></Menu.Item>
+        { (user && user.email) ?
+          <Menu.Item key="/post_add"><PostAdd showModal={this.state.postAdd} /></Menu.Item>
+        : null }
         { (user && user.email) ?
           <SubMenu key="/user" title={<span><Icon type="user" /><FormattedMessage id='user.menu' /></span>}>
             <Menu.Item key='/logoff'><a href='#' onClick={() => this.props.dispatch(logOut())}><Icon type='logout' /><FormattedMessage id='user.logout' /></a></Menu.Item>
