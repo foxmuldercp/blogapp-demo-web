@@ -1,0 +1,20 @@
+== BlogApp
+
+This small BlogApp based on official Rails Guides with my Twitter-style clone interpretation
+
+It user ReactJS/Redux/Router and ant.design UI framework
+
+App contains my custom authentication module via JWT, Users, Categories, Posts and Comments
+Categories and Posts can be created only via registered users.
+
+All application routes located in '/api' scope. I create example nginx configuration file for use it as proxy
+in aplication api repo
+
+* Installation
+
+* edit src/actions/fetchApi.jsx and src/actions/sendApi.jsx for proper pointing to yur api server, then run
+
+    $ npm install
+    $ npm run production
+
+  Than you can point nginx or another proxy to application_root/dist/ for serve folder application
