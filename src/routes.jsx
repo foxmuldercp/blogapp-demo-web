@@ -8,6 +8,8 @@ import Start from './containers/Start'
 import Login from './containers/Login'
 import Register from './containers/Register'
 import Start from './containers/Start'
+import Categories from './containers/Categories'
+import CategoryEdit from './containers/CategoryEdit'
 
 const jwt_decode = require('jwt-decode')
 
@@ -36,6 +38,8 @@ const routes = <Route path="/" component={PageLayout}>
   <Route path="start" component={Start} />
   <Route path="login" component={Login} />
   <Route path="register" component={Register} />
+  <Route path="categories" component={Categories} />
+  <Route path="categories" path="categories/:id/edit" component={CategoryEdit} onEnter={checkAuth} />
   <Route path="*" component={NotFound}/>
 </Route>
 
