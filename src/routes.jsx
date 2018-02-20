@@ -13,6 +13,7 @@ import CategoryEdit from './containers/CategoryEdit'
 import Posts from './containers/Posts'
 import Post from './containers/Post'
 import PostEdit from './containers/PostEdit'
+import Users from './containers/Users'
 
 const jwt_decode = require('jwt-decode')
 
@@ -46,6 +47,7 @@ const routes = <Route path="/" component={PageLayout}>
   <Route path="posts" component={Posts} />
   <Route path="posts" path="posts/:id" component={Post} />
   <Route path="posts" path="posts/:id/edit" component={PostEdit} />
+  <Route path="users" component={Users} />
   <Route path="*" component={NotFound}/>
 </Route>
 
