@@ -1,0 +1,53 @@
+{
+  "app.lang": "Поточна мова: {lang}",
+
+  "header.main": "Головна",
+  "header.users": "Користувачи",
+  "header.posts": "Записи",
+  "header.categories": "Категорії",
+
+  "common.all": "Усі",
+  "common.name": "Ім'я",
+  "common.search": "Пошук",
+  "common.status": "Статус",
+  "common.comment": "Коментар",
+  "common.common": "Загальні",
+  "common.add": "Додати",
+  "common.edit": "Редагувати",
+  "common.destroy": "Видалити",
+
+  "common.actions": "Дії",
+  "common.add": "Додати",
+  "common.cancel": "Відмова",
+  "common.submit": "Виконати",
+  "common.created": "Створено",
+
+  "data.loading": "Дані завантажуються або відсутні",
+  "data.loaded": "Завантажено: {items}",
+  "data.selected": "Обрано: {items}",
+  "data.filtered": "Відфільтровано: {items}",
+  "data.missing": "Дані відсутні",
+  "data.reload": "Оновити",
+
+  "user.menu": "Користувач",
+  "user.profile": "Профіль",
+  "user.login": "Вхід",
+  "user.logout": "Вихід",
+  "user.register": "Реєстрація",
+  "user.email": "Пошта",
+  "user.name": "Ім'я",
+
+  "board.name": "Головна",
+
+  "post.count": "Кількість записів",
+  "post.add": "Додати запис",
+
+  "post.content": "Вміст",
+  "post.comments_count": "Коментарі: ",
+
+  "category": "Категорія",
+  "category.edit": "Редагувати категорію",
+
+  "category.description": "Опис"
+
+}

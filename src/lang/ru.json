@@ -1,0 +1,51 @@
+{
+  "app.lang": "Текущий язык: {lang}",
+
+  "header.main": "Главная",
+  "header.users": "Пользователи",
+  "header.posts": "Записи",
+  "header.categories": "Категории",
+
+  "common.all": "Все",
+  "common.name": "Имя",
+  "common.search": "Поиск",
+  "common.status": "Статус",
+  "common.comment": "Комментарий",
+  "common.common": "Общие",
+  "common.add": "Добавить",
+  "common.edit": "Редактировать",
+
+  "common.actions": "Действия",
+  "common.add": "Добавить",
+  "common.cancel": "Отмена",
+  "common.submit": "Подтвердить",
+  "common.created": "Создано",
+
+  "data.loading": "Данные загружаются или отсутствуют",
+  "data.loaded": "Загружено: {items}",
+  "data.selected": "Выбрано: {items}",
+  "data.filtered": "Отфильтрвано: {items}",
+  "data.missing": "Данные отсутствуют",
+  "data.reload": "Обновить",
+
+  "user.menu": "Пользователь",
+  "user.profile": "Профиль",
+  "user.login": "Вход",
+  "user.logout": "Выход",
+  "user.register": "Регистрация",
+  "user.email": "Почта",
+  "user.name": "Имя",
+
+  "board.name": "Главная",
+  "board.events": "События",
+
+  "post.count": "Количество записей",
+  "post.add": "Добавить запись",
+  "post.content": "Содержимое",
+  "post.comments_count": "Комментарии:",
+
+  "category": "Категория",
+
+  "category.description": "Описание"
+
+}

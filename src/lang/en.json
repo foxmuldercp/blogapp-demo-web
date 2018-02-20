@@ -1,0 +1,49 @@
+{
+  "app.lang": "Application language: {lang}",
+
+  "header.main": "Main",
+  "header.users": "Users",
+  "header.posts": "Posts",
+  "header.categories": "Categories",
+
+  "common.all": "All",
+  "common.name": "Name",
+  "common.search": "Search",
+  "common.status": "Status",
+  "common.comment": "Comment",
+  "common.common": "Common",
+  "common.created": "Created",
+
+  "common.actions": "Actions",
+  "common.add": "Add",
+  "common.edit": "Edit",
+  "common.destroy": "Destroy",
+  "common.cancel": "Cancel",
+  "common.submit": "Submit",
+
+  "data.loading": "Data is being downloaded or missing",
+  "data.loaded": "Loaded {items}",
+  "data.selected": "Selected {items}",
+  "data.filtered": "Filtered {items}",
+  "data.missing": "Data is missing",
+  "data.reload": "Reload",
+
+  "user.menu": "User",
+  "user.profile": "Profile",
+  "user.login": "Login",
+  "user.logout": "Logout",
+  "user.register": "Register",
+  "user.email": "Email",
+  "user.name": "Name",
+
+  "board.name": "Board",
+
+  "post.count": "Posts count",
+  "post.add": "Create post",
+  "post.content": "Content",
+  "post.comments_count": "Comments: ",
+
+  "category": "Category",
+  "category.description": "Description"
+
+}
