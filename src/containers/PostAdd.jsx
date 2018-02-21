@@ -47,7 +47,7 @@ const CollectionCreateForm = Form.create()(
             </Select>
           )}
         </FormItem>
-          <FormItem label={<FormattedMessage id='post.content' />}>
+          <FormItem label={<FormattedMessage id='common.content' />}>
             {getFieldDecorator('content', {
               rules: [{ required: true, message: 'Please input the post content!' }],
             })(
