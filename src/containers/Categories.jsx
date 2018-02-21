@@ -6,7 +6,7 @@ import {push} from 'react-router-redux'
 import moment from 'moment/min/moment.min'
 import { FormattedMessage } from 'react-intl'
 
-import {getCategories, removeItem} from '../actions/categories'
+import {categoriesGet, categoryDelete} from '../actions/categories'
 
 import DataTable from './DataTable'
 import CategoryAdd from './CategoryAdd'
@@ -17,25 +17,19 @@ const ButtonGroup = Button.Group
 class Categories extends Component {
   constructor(props) {
     super(props)
-    var demo = props.location.query.demo
     this.state = {
-      privacy: demo,
-      filteredItems: [],
       items: (props.categories && props.categories.items) ? props.categories.items : [],
-      filterDropdownVisible: false,
-      searchText: '',
-      loading: false
     }
   }
 
   getItems() {
     this.setState({loading: true})
-    this.props.dispatch(getCategories())
+    this.props.dispatch(categoriesGet())
   }
 
   destroyItem(itemId) {
     this.setState({loading: true})
-    this.props.dispatch(removeItem(itemId))
+    this.props.dispatch(categoryDelete(itemId))
   }
 
   componentDidMount(){
@@ -45,7 +39,7 @@ class Categories extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const newState = {items: nextProps.items.items, loading: false}
+    const newState = {items: nextProps.categories.items, loading: false}
     this.setState(newState)
   }
 
@@ -132,7 +126,6 @@ class Categories extends Component {
   }
 }
 
-// <div>Demo </div>
 export default Categories = connect(store => ({
-    user: store.user, items: store.categories
+    user: store.user, categories: store.categories
 }))(Categories)

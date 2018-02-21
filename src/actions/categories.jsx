@@ -4,7 +4,7 @@ import {sendApi} from './sendApi'
 
 import {message} from 'antd'
 
-export function getCategories() {
+export function categoriesGet() {
   return function(dispatch, getState) {
     fetchApi('categories')
     .then( function(result) {
@@ -16,7 +16,7 @@ export function getCategories() {
   }
 }
 
-export function getCategory(id) {
+export function categoryGet(id) {
   return function(dispatch, getState) {
     fetchApi('categories/'+id)
     .then( function(result) {
@@ -47,7 +47,7 @@ export function categoryAdd(payload) {
   }
 }
 
-export function updateCategory(id, data) {
+export function categoryUpdate(id, data) {
   return function(dispatch, getState) {
     const content = {category: data}
     sendApi('PATCH', 'categories/'+id, content)
@@ -60,7 +60,7 @@ export function updateCategory(id, data) {
   }
 }
 
-export function removeItem(itemId) {
+export function categoryDelete(itemId) {
   return function(dispatch, getState) {
     sendApi('DELETE', 'categories/'+itemId)
     .then( function(result) {

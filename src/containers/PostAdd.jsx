@@ -5,7 +5,7 @@ import {push} from 'react-router-redux'
 import { FormattedMessage } from 'react-intl'
 
 import { postAdd } from '../actions/posts'
-import { getCategories } from '../actions/categories'
+import { categoriesGet } from '../actions/categories'
 
 import { Button, Modal, Form, Input, Select, message } from 'antd'
 const FormItem = Form.Item
@@ -78,7 +78,7 @@ class PostAdd extends React.Component {
 
   componentDidMount(){
     if (this.state.categories.length == 0) {
-      this.props.dispatch(getCategories())
+      this.props.dispatch(categoriesGet())
     }
   }
 
