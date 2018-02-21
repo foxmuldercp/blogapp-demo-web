@@ -7,9 +7,11 @@ import moment from 'moment/min/moment.min'
 
 import { FormattedMessage } from 'react-intl'
 
+import { postsGet, postDelete } from '../actions/posts'
+
 import CommentAdd from './CommentAdd'
 
-import { Button, Card, Icon } from 'antd'
+import { Button, Card, Icon, message } from 'antd'
 
 const ButtonGroup = Button.Group
 
@@ -18,6 +20,12 @@ class PostItem extends Component {
   shortDate(data) {
     const date = moment(data)
     return date.format('DD MMM YY hh:mm:ss')
+  }
+
+  destroyItem(postId) {
+    this.props.dispatch(postDelete(postId))
+    this.props.dispatch(postsGet())
+    message.info('Delete post called now')
   }
 
   actions(record) {

@@ -61,7 +61,7 @@ export function postUpdate(id, data) {
   }
 }
 
-export function postRemove(postId) {
+export function postDelete(postId) {
   return function(dispatch, getState) {
     sendApi('DELETE', 'posts/'+postId)
     .then( function(result) {
