@@ -20,6 +20,7 @@
   "common.destroy": "Destroy",
   "common.cancel": "Cancel",
   "common.submit": "Submit",
+  "common.content": "Content",
 
   "data.loading": "Data is being downloaded or missing",
   "data.loaded": "Loaded {items}",
@@ -40,10 +41,10 @@
 
   "post.count": "Posts count",
   "post.add": "Create post",
-  "post.content": "Content",
   "post.comments_count": "Comments: ",
 
   "category": "Category",
-  "category.description": "Description"
+  "category.description": "Description",
 
+  "nav.back_to_list": "Back to list"
 }

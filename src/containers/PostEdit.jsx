@@ -76,7 +76,7 @@ class PostEditForm extends Component {
             </Select>
           )}
         </FormItem>
-      <FormItem label="content"
+      <FormItem label={<FormattedMessage id='common.content' />}
         validateStatus={contentError ? 'error' : ''}
         help={contentError || ''}
       >
@@ -159,7 +159,6 @@ class PostEdit extends Component {
 
   render() {
   const { fields, categories } = this.state
-  console.log(fields.name.value, categories.length)
     return <PostEditView {...fields} onSubmit={::this.saveData} categories={categories}/>
   }
 }

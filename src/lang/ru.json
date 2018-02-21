@@ -20,6 +20,7 @@
   "common.cancel": "Отмена",
   "common.submit": "Подтвердить",
   "common.created": "Создано",
+  "common.content": "Содержимое",
 
   "data.loading": "Данные загружаются или отсутствуют",
   "data.loaded": "Загружено: {items}",
@@ -41,11 +42,11 @@
 
   "post.count": "Количество записей",
   "post.add": "Добавить запись",
-  "post.content": "Содержимое",
   "post.comments_count": "Комментарии:",
 
   "category": "Категория",
 
-  "category.description": "Описание"
+  "category.description": "Описание",
 
+  "nav.back_to_list": "К списку"
 }

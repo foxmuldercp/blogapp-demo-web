@@ -73,7 +73,7 @@ class Post extends Component {
     return (<div>{this.showPost(post)}
       <p style={{'text-align': 'center'}}>
         <Button size={'large'}>
-          <Link to='/posts'>Back to list</Link>
+          <Link to='/posts'><FormattedMessage id='nav.back_to_list' /></Link>
         </Button>
       {this.showCommentAdd(post)}
      </p>

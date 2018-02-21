@@ -21,6 +21,7 @@
   "common.cancel": "Відмова",
   "common.submit": "Виконати",
   "common.created": "Створено",
+  "common.content": "Вміст",
 
   "data.loading": "Дані завантажуються або відсутні",
   "data.loaded": "Завантажено: {items}",
@@ -42,12 +43,13 @@
   "post.count": "Кількість записів",
   "post.add": "Додати запис",
 
-  "post.content": "Вміст",
   "post.comments_count": "Коментарі: ",
 
   "category": "Категорія",
   "category.edit": "Редагувати категорію",
 
-  "category.description": "Опис"
+  "category.description": "Опис",
+
+  "nav.back_to_list": "До списку"
 
 }
