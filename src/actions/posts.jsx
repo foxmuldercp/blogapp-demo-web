@@ -4,7 +4,7 @@ import {sendApi} from './sendApi'
 
 import {message} from 'antd'
 
-export function getPosts() {
+export function postsGet() {
   return function(dispatch, getState) {
     fetchApi('posts')
     .then( function(result) {
@@ -16,7 +16,7 @@ export function getPosts() {
   }
 }
 
-export function getPost(postId) {
+export function postGet(postId) {
   return function(dispatch, getState) {
     fetchApi('posts/'+postId)
     .then( function(result) {
@@ -47,7 +47,7 @@ export function postAdd(payload) {
   }
 }
 
-export function updatePost(id, data) {
+export function postUpdate(id, data) {
   return function(dispatch, getState) {
     const content = {post: data}
     sendApi('PATCH', 'posts/'+id, content)
@@ -61,13 +61,12 @@ export function updatePost(id, data) {
   }
 }
 
-export function removeItem(postId) {
+export function postRemove(postId) {
   return function(dispatch, getState) {
     sendApi('DELETE', 'posts/'+postId)
     .then( function(result) {
       if (result.code == 204) {
         dispatch({ type: 'posts_item_delete', payload: postId })
-        dispatch({ type: 'posts_load'})
       }
     })
     .catch(error => console.log('Post delete error: ', error))

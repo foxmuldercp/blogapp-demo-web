@@ -6,34 +6,31 @@ import {push} from 'react-router-redux'
 import moment from 'moment/min/moment.min'
 import { FormattedMessage } from 'react-intl'
 
-import {getPosts, removeItem} from '../actions/posts'
+import PostItem from './PostItem'
 
-import { Icon, Button, Input, Timeline, Card, message } from 'antd'
+import {postsGet, postRemove} from '../actions/posts'
+
+import { Icon, Button, Timeline, Card, message } from 'antd'
 const { Meta } = Card
 const ButtonGroup = Button.Group
 
 class Posts extends Component {
   constructor(props) {
     super(props)
-    var demo = props.location.query.demo
     this.state = {
-      privacy: demo,
-      filteredItems: [],
       items: (props.items.items) ? props.items.items : [],
-      filterDropdownVisible: false,
-      searchText: '',
       loading: false
     }
   }
 
   getItems() {
     this.setState({loading: true})
-    this.props.dispatch(getPosts())
+    this.props.dispatch(postsGet())
   }
 
   destroyItem(itemId) {
     this.setState({loading: true})
-    this.props.dispatch(removeItem(itemId))
+    this.props.dispatch(postRemove(itemId))
     message.info('Delete post called now')
   }
 
@@ -72,23 +69,14 @@ class Posts extends Component {
     let buttons = []
     if (this.props.user.email) {
       buttons.push(<Button><Link to={record.url+'/edit'}><FormattedMessage id='common.edit' /></Link></Button>)
-      buttons.push(<Button type='danger' onClick={() => { this.destroyItem(record.id)}}><FormattedMessage id='common.destroy' /></Button>)
+      buttons.push(<Button type='danger' onClick={() => {this.destroyItem(record.id)}}><FormattedMessage id='common.destroy' /></Button>)
     }
     return <ButtonGroup>{buttons}</ButtonGroup>
   }
 
   timeLine(items) {
     const line = items.map((record) => {
-    return (<Timeline.Item>
-      <Card title={<Link to={record.url}><Icon type="book" />{record.name}</Link>}
-         extra={this.actions(record)}
-         actions={[<Link to={record.category.url}><Icon type="tag" />{record.category.name}</Link>,
-           <Link to={record.user.url}><Icon type="user" />{record.user.email}</Link>,
-           <Link to={record.url}><Icon type='list' /> <FormattedMessage id='post.comments_count' />: {record.comments_count}</Link>]}
-      >
-        {record.content}
-      </Card>
-    </Timeline.Item>)
+      return <Timeline.Item><PostItem record={record} /></Timeline.Item>
     })
     return line
   }
@@ -96,7 +84,7 @@ class Posts extends Component {
   render() {
     const items = (this.state.items && this.state.items.length > 0) ? this.state.items : []
     return <Card title={<FormattedMessage id='header.posts' />} extra={this.updateButton()}>
-      {this.timeLine(items)}
+      <Timeline>{this.timeLine(items)}</Timeline>
     </Card>
   }
 }

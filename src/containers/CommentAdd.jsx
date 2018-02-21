@@ -5,6 +5,7 @@ import {push} from 'react-router-redux'
 import { FormattedMessage } from 'react-intl'
 
 import { commentAdd } from '../actions/comments'
+import { postGet } from '../actions/posts'
 
 import { Button, Modal, Form, Input, message } from 'antd'
 const FormItem = Form.Item
@@ -62,7 +63,8 @@ class CommentAdd extends React.Component {
       if (err) {
         return;
       }
-      this.props.dispatch(commentAdd(this.props.post.id, values))
+      this.props.dispatch(commentAdd(this.props.postId, values))
+      this.props.dispatch(postGet(this.props.postId))
       form.resetFields();
       this.setState({ visible: false });
     });
@@ -73,7 +75,7 @@ class CommentAdd extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const newState = {post: nextProps.post}
+    const newState = {postId: nextProps.postId}
     this.setState(newState)
   }
 

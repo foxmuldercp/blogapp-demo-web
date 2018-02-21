@@ -4,9 +4,9 @@ import {push} from 'react-router-redux'
 
 import { FormattedMessage } from 'react-intl'
 
-import { getPost, updatePost } from '../actions/posts'
+import { postGet, postUpdate } from '../actions/posts'
 
-import {getCategories} from '../actions/categories'
+import {categoriesGet} from '../actions/categories'
 
 import { Button, Modal, Form, Input, Select, message } from 'antd'
 
@@ -51,8 +51,7 @@ class PostEditForm extends Component {
     const categoryError = isFieldTouched('category_id') && getFieldError('category_id');
 
     const fields = (this.props.fields) ? this.props.fields : defaultState
-
-    const category_list = (this.props.categories) ? this.props.categories.map(item => <Option key={item.id}>{item.name}</Option>) : []
+    const category_list = (this.props.categories && this.props.categories.length > 0) ? this.props.categories.map(item => <Option key={item.id}>{item.name}</Option>) : []
 
     return (
       <Form {...fields} onSubmit={this.handleSubmit}>
@@ -119,7 +118,7 @@ class PostEdit extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { fields: defaultState, item: null, categories: [] }
+    this.state = { fields: defaultState, post: null, categories: [] }
   }
 
   componentDidMount() {
@@ -128,8 +127,8 @@ class PostEdit extends Component {
 
   getItems() {
     this.setState({loading: true})
-    this.props.dispatch(getCategories())
-    this.props.dispatch(getPost(this.props.params.id))
+    this.props.dispatch(categoriesGet())
+    this.props.dispatch(postGet(this.props.params.id))
   }
 
   setFields(item) {
@@ -144,27 +143,27 @@ class PostEdit extends Component {
     }
     return newItem
   }
+
   componentWillReceiveProps(nextProps) {
-    let { item, fields, categories } = this.state
-    categories = (categories != nextProps.categories) ? nextProps.categories : categories
-    item = (nextProps.item) ? nextProps.item : null
-    fields = (item) ? this.setFields(item) : defaultState
-    const newState = {item: item, fields: fields, categories: categories, loading: false}
+    let { post, fields, categories } = this.state
+    categories = nextProps.categories.items
+    post = (nextProps.post.item) ? nextProps.post.item : post
+    fields = (post) ? this.setFields(post) : defaultState
+    const newState = {post: post, fields: fields, categories: categories, loading: false}
     this.setState(newState)
   }
 
   saveData(values) {
-    this.props.dispatch(updatePost(this.state.item.id, values))
+    this.props.dispatch(postUpdate(this.state.item.id, values))
   }
 
   render() {
-    const { fields, categories } = this.state
+  const { fields, categories } = this.state
+  console.log(fields.name.value, categories.length)
     return <PostEditView {...fields} onSubmit={::this.saveData} categories={categories}/>
   }
 }
 
-//
-
 export default PostEdit = connect(store => ({
-    user: store.user, categories: store.categories, item: store.post
+    user: store.user, categories: store.categories, post: store.post
 }))(PostEdit)

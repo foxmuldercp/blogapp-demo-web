@@ -1,10 +1,11 @@
-const initialItem = {}
+const initialItem = { item: null }
 
 export default function fetchPost(state=initialItem, action){
+  const item = action.payload
   switch (action.type){
 
   case 'posts_item_load':
-    return action.payload
+    return { item }
     break
 
   case 'auth_logoff':
@@ -12,7 +13,7 @@ export default function fetchPost(state=initialItem, action){
     break
 
   default:
-    return initialItem
+    return state
     break
   }
 }
