@@ -95,6 +95,7 @@ class PostAdd extends React.Component {
       }
 
       this.props.dispatch(postAdd(values))
+      this.props.dispatch(categoriesGet())
       form.resetFields();
       this.setState({ visible: false });
     });
