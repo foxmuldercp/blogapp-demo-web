@@ -112,6 +112,7 @@ class Users extends Component {
 
   actions(record) {
     let buttons = []
+    buttons.push(<Button><Link to={'/users/'+record.id}>Posts</Link></Button>)
     buttons.push(<Button type='danger' onClick={() => { this.destroyItem(record.id)}}>Destroy</Button>)
     return <ButtonGroup>{buttons}</ButtonGroup>
   }

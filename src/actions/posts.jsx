@@ -16,6 +16,18 @@ export function postsGet() {
   }
 }
 
+export function postsUserGet(userId) {
+  return function(dispatch, getState) {
+    fetchApi('users/'+userId+'/posts')
+    .then( function(result) {
+      if (result.code == 200) {
+        dispatch({ type: 'posts_load', payload: result.response })
+      }
+    })
+    .catch(error => console.log('Posts load error: ', error))
+  }
+}
+
 export function postGet(postId) {
   return function(dispatch, getState) {
     fetchApi('posts/'+postId)
