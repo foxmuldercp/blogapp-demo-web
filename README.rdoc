@@ -12,7 +12,10 @@ in aplication api repo
 
 * Installation
 
-* edit src/actions/fetchApi.jsx and src/actions/sendApi.jsx for proper pointing to yur api server, then run
+** copy webpack.config.js-example to webpack.config.js and update it for absolute path in output section
+
+** copy src/actions/fetchApi.jsx-example and src/actions/sendApi.jsx-example for proper pointing to your
+   api server, then run
 
     $ npm install
     $ npm run production

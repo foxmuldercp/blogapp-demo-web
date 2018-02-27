@@ -1,5 +1,5 @@
 /**
- * Created by Николай on 19.11.2016.
+ * Created by Nikolay Turnaviotov from default template project
  */
 
 var webpack = require('webpack');
@@ -13,7 +13,7 @@ var PROD = NODE_ENV == 'production';
 module.exports = {
   entry: ['whatwg-fetch', "./src/main.jsx"],
   output: {
-    path: "/opt/blogapp-web/dist",
+    path: "${insert absolute root project path here then update nginx/apache config}/dist",
     filename: "bundle.js"
   },
   resolve:{
