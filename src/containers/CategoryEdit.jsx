@@ -127,5 +127,5 @@ class CategoryEdit extends Component {
 }
 
 export default CategoryEdit = connect(store => ({
-    user: store.user, item: store.category
+    user: store.auth, item: store.category
 }))(CategoryEdit)

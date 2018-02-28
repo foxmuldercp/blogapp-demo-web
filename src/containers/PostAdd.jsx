@@ -123,5 +123,5 @@ class PostAdd extends React.Component {
 }
 
 export default PostAdd = connect(store => ({
-  user: store.user, categories: store.categories
+  user: store.auth, categories: store.categories
 }))(PostAdd)

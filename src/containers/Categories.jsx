@@ -127,5 +127,5 @@ class Categories extends Component {
 }
 
 export default Categories = connect(store => ({
-    user: store.user, categories: store.categories
+    user: store.auth, categories: store.categories
 }))(Categories)

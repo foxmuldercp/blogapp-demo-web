@@ -2,7 +2,7 @@ var jwt_decode = require('jwt-decode')
 
 const initialItem = {}
 
-export default function user(state=initialItem, action){
+export default function authUser(state=initialItem, action){
   switch (action.type){
 
   case 'auth_success':

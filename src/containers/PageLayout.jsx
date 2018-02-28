@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {push} from 'react-router-redux'
 import {Link} from 'react-router'
 
-import {logOut} from '../actions/user'
+import {logOut} from '../actions/auth'
 import PostAdd from './PostAdd'
 
 import { Layout, Menu, Icon, Button, Breadcrumb, Badge } from 'antd';
@@ -109,5 +109,5 @@ class PageLayout extends Component {
 }
 
 export default PageLayout = connect(store => ({
-  user: store.user
+  user: store.auth
 }))(PageLayout)

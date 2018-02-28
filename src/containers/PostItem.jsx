@@ -54,5 +54,5 @@ class PostItem extends Component {
 }
 
 export default PostItem = connect(store => ({
-  user: store.user
+  user: store.auth
 }))(PostItem)

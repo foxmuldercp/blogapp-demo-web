@@ -46,5 +46,5 @@ class CommentItem extends Component {
 }
 
 export default CommentItem = connect(store => ({
-  user: store.user
+  user: store.auth
 }))(CommentItem)

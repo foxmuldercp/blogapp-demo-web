@@ -36,5 +36,5 @@ class Start extends Component {
 }
 
 export default Start = connect(store => ({
-  user: store.user
+  user: store.auth
 }))(Start)

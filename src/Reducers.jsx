@@ -1,4 +1,4 @@
-import user from './reducers/user'
+import auth from './reducers/auth'
 import categories from './reducers/categories'
 import category from './reducers/category'
 import posts from './reducers/posts'
@@ -7,5 +7,5 @@ import comments from './reducers/comments'
 import users from './reducers/users'
 
 export default {
-  user, categories, category, posts, post, comments, users
+  auth, categories, category, posts, post, comments, users
 }

@@ -4,7 +4,7 @@ let createReactClass = require('create-react-class')
 import {connect} from 'react-redux'
 import {push} from 'react-router-redux'
 
-import {signIn} from '../actions/user'
+import {signIn} from '../actions/auth'
 
 import { Row, Col, Card, Button, Form, Input, message, Checkbox } from 'antd'
 const createForm = Form.create
@@ -78,5 +78,5 @@ let Register = createReactClass({
 Register = createForm()(Register)
 
 export default Register = connect(store => ({
-  user: store.user
+  user: store.auth
 }))(Register)

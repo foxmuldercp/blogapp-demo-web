@@ -60,5 +60,5 @@ class Posts extends Component {
 }
 
 export default Posts = connect(store => ({
-    user: store.user, items: store.posts
+    user: store.auth, items: store.posts
 }))(Posts)

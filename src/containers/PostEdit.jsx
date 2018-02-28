@@ -164,5 +164,5 @@ class PostEdit extends Component {
 }
 
 export default PostEdit = connect(store => ({
-    user: store.user, categories: store.categories, post: store.post
+    user: store.auth, categories: store.categories, post: store.post
 }))(PostEdit)

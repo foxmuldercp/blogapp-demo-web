@@ -86,5 +86,5 @@ class CategoryAdd extends React.Component {
 }
 
 export default CategoryAdd = connect(store => ({
-  user: store.user
+  user: store.auth
 }))(CategoryAdd)

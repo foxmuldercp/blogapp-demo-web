@@ -5,7 +5,7 @@ import {Link} from 'react-router'
 import {connect} from 'react-redux'
 import {push} from 'react-router-redux'
 
-import {logIn} from '../actions/user'
+import {logIn} from '../actions/auth'
 
 import { Row, Col, Card, Button, Form, Input, message, Checkbox, Icon } from 'antd'
 const createForm = Form.create
@@ -72,5 +72,5 @@ let Login = createReactClass({
 Login = createForm()(Login)
 
 export default Login = connect(store => ({
-  user: store.user
+  user: store.auth
 }))(Login)

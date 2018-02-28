@@ -7,7 +7,7 @@ import moment from 'moment/min/moment.min'
 import { FormattedMessage } from 'react-intl'
 
 
-import {getUsers} from '../actions/users'
+import {usersGet} from '../actions/users'
 
 import DataTable from './DataTable'
 
@@ -30,7 +30,7 @@ class Users extends Component {
 
   getItems() {
     this.setState({loading: true})
-    this.props.dispatch(getUsers())
+    this.props.dispatch(usersGet())
   }
 
   destroyItem(itemId) {
@@ -183,5 +183,5 @@ class Users extends Component {
 }
 
 export default Users = connect(store => ({
-    user: store.user, items: store.users
+    user: store.auth, items: store.users
 }))(Users)
